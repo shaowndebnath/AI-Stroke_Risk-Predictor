@@ -3,7 +3,10 @@ import numpy as np
 import pickle
 from sklearn.preprocessing import LabelEncoder
 from collections import Counter
+from train_model import RandomForestClassifier
+import pickle
 
+model = pickle.load(open('model.pkl', 'rb'))
 class Node:
     def __init__(self, feature_index=None, threshold=None, left=None, right=None, value=None):
         self.feature_index = feature_index
@@ -161,3 +164,4 @@ def train_and_save_model():
 
 if __name__ == "__main__":
     train_and_save_model()
+
