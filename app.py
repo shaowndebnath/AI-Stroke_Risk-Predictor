@@ -8,8 +8,6 @@ from sklearn.ensemble import RandomForestClassifier
 from train_model import RandomForestClassifier
 import joblib
 model = joblib.load(open('model.pkl', 'rb'))
-import pickle
-model = pickle.load(open('model.pkl', 'rb'))
 from collections import Counter
 
 class Node:
@@ -238,6 +236,7 @@ def main():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
