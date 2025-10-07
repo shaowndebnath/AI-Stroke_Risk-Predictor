@@ -4,6 +4,9 @@ import numpy as np
 import requests
 import json
 import os
+from train_model import RandomForestClassifier
+import pickle
+model = pickle.load(open('model.pkl', 'rb'))
 from collections import Counter
 
 class Node:
@@ -232,3 +235,4 @@ def main():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
