@@ -4,7 +4,13 @@ import pickle
 from sklearn.preprocessing import LabelEncoder
 from collections import Counter
 import pickle
+from sklearn.ensemble import RandomForestClassifier
+import joblib
 
+model = RandomForestClassifier()
+model.fit(X_train, y_train)  # your training logic here
+
+joblib.dump(model, 'model.pkl')
 model = pickle.load(open('model.pkl', 'rb'))
 class Node:
     def __init__(self, feature_index=None, threshold=None, left=None, right=None, value=None):
@@ -163,5 +169,6 @@ def train_and_save_model():
 
 if __name__ == "__main__":
     train_and_save_model()
+
 
 
